@@ -57,13 +57,15 @@ A real-time posture monitoring application that uses computer vision to detect a
 
 4. **Install required dependencies**:
    ```bash
-   pip install opencv-python mediapipe numpy pygame winotify
+   pip install -r requirements.txt
    ```
 
-   Or install all at once:
+   Or install individually:
    ```bash
-   pip install opencv-python mediapipe numpy pygame winotify tkinter
+   pip install opencv-python mediapipe numpy pygame winotify
    ```
+   
+   Note: `tkinter` is included with Python and doesn't need to be installed separately.
 
 ## Usage
 
@@ -156,12 +158,18 @@ Posture/
 ## Requirements
 
 - Python 3.12+
-- OpenCV (cv2)
-- MediaPipe
-- NumPy
-- Pygame (for volume-controlled sound notifications)
-- Winotify (for Windows toast notifications)
-- Tkinter (usually included with Python)
+- Dependencies listed in `requirements.txt`:
+  - OpenCV (opencv-python) - Computer vision library
+  - MediaPipe - Pose and face landmark detection
+  - NumPy - Numerical operations
+  - Pygame - Volume-controlled sound notifications
+  - Winotify - Windows toast notifications
+  - Tkinter - GUI library (included with Python, no installation needed)
+
+Install all dependencies with:
+```bash
+pip install -r requirements.txt
+```
 
 ## License
 
