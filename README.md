@@ -76,41 +76,6 @@ A real-time posture monitoring application that uses computer vision to detect a
    
    Note: `tkinter` is included with Python and doesn't need to be installed separately.
 
-### Building a Standalone Executable (For Developers)
-
-To create a standalone `.exe` file that runs without installing Python or dependencies:
-
-1. **Ensure you're using the virtual environment**:
-   ```bash
-   venv\Scripts\activate
-   ```
-
-2. **Install PyInstaller** (if not already installed):
-   ```bash
-   pip install pyinstaller
-   ```
-
-3. **Build the executable**:
-   ```bash
-   pyinstaller Posture.spec
-   ```
-   
-   Or use the venv Python directly:
-   ```bash
-   .\venv\Scripts\pyinstaller.exe Posture.spec
-   ```
-
-4. **Find your executable**:
-   - The executable will be in the `dist/` folder
-   - The main executable is `dist/Posture.exe`
-   - This is a single-file executable with all dependencies bundled
-
-5. **Distribution**:
-   - Upload `Posture.exe` to GitHub Releases for distribution
-   - Users can download and run it directly - no installation needed!
-   - The executable is large (~200-500 MB) due to MediaPipe and OpenCV dependencies
-   - On first run, the executable extracts files to a temporary directory (this is normal)
-
 ## Usage
 
 ### Running the Application
@@ -246,5 +211,6 @@ This project is provided as-is for personal use.
 ## Author
 
 Joshua Gao
+
 
 
