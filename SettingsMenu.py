@@ -1,7 +1,7 @@
 """
-Settings Menu Module for Posture Detection Application
+Settings Menu file for Posture Detection Application
 
-This module contains the tkinter-based settings menu GUI.
+This file contains the tkinter-based settings menu GUI.
 """
 
 import cv2
@@ -366,7 +366,7 @@ def openSettingsMenu(frame, w, h):
     historySizeSpinbox.grid(row=3, column=1, sticky=tk.W, pady=5, padx=5)
     createToolTip(historySizeSpinbox, "Number of recent measurements stored for outlier detection and smoothing. Higher values provide better smoothing but use more memory. Recommended: 20-30 for good balance.")
 
-    outlierStdLabel = ttk.Label(perfCustomFrame, text="Outlier Std Deviations:")
+    outlierStdLabel = ttk.Label(perfCustomFrame, text="Outlier Standard Deviations:")
     outlierStdLabel.grid(row=4, column=0, sticky=tk.W, pady=5, padx=5)
     createToolTip(outlierStdLabel, "Standard deviation threshold for outlier detection. Values beyond this threshold are filtered out as noise. Higher values (3.0-4.0) are more lenient, lower values (2.0-2.5) filter more aggressively.")
 
@@ -651,9 +651,7 @@ def openSettingsMenu(frame, w, h):
 
     perfPresetCombo.bind('<<ComboboxSelected>>', onPerfPresetChange)
     # Initial load
-    onPerfPresetChange()  # This will show/hide Custom frame and load values
-
-    # Description will be shown in bottom area
+    onPerfPresetChange()  # Show/hide Custom frame and load values
 
     # ========================================================================
     # METRIC PRESET PAGE
@@ -959,9 +957,8 @@ def openSettingsMenu(frame, w, h):
 
     metricPresetSelectCombo.bind('<<ComboboxSelected>>', onMetricPresetChange)
     # Initial load
-    onMetricPresetChange()  # This will show/hide Custom/Info frame and load values
+    onMetricPresetChange()  # Show/hide Custom/Info frame and load values
 
-    # Description will be shown in bottom area
 
     # ========================================================================
     # VISUALS PAGE
@@ -1137,8 +1134,6 @@ def openSettingsMenu(frame, w, h):
     backToNormalEntry = ttk.Entry(messageFrame, textvariable=notificationVars['back_to_normal_message'], width=50)
     backToNormalEntry.grid(row=1, column=1, sticky=tk.W, pady=5, padx=5)
     createToolTip(backToNormalEntry, "Message to display when posture returns to normal. A pleasant chime sound will also play.")
-
-    # Description will be shown in bottom area
 
     # ========================================================================
     # SAVE/CANCEL BUTTONS
