@@ -41,10 +41,6 @@ A real-time posture monitoring application that uses computer vision to detect a
 
 1. Go to the **Releases** page on GitHub
 2. Download the latest `Posture.exe` file
-3. Double-click `Posture.exe` to run
-4. No Python installation or dependencies required - it just works!
-
-**That's it!** The executable includes everything needed to run. Just download, double-click, and go!
 
 ---
 
@@ -256,3 +252,4 @@ This project is provided as-is for personal use.
 ## Author
 
 Joshua Gao
+
