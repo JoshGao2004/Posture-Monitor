@@ -111,12 +111,6 @@ To create a standalone `.exe` file that runs without installing Python or depend
    - The executable is large (~200-500 MB) due to MediaPipe and OpenCV dependencies
    - On first run, the executable extracts files to a temporary directory (this is normal)
 
-**Important Notes**: 
-- ✅ The executable includes all dependencies, preset files, and sound files - no additional installation required
-- ⚠️ First-time startup may be slower as the executable extracts to a temporary directory
-- ⚠️ Some antivirus software may flag PyInstaller executables (this is a false positive)
-- 📦 For GitHub releases, upload the `Posture.exe` file directly as a release asset
-
 ## Usage
 
 ### Running the Application
@@ -252,4 +246,5 @@ This project is provided as-is for personal use.
 ## Author
 
 Joshua Gao
+
 
