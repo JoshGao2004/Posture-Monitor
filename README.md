@@ -35,7 +35,7 @@ A real-time posture monitoring application that uses computer vision to detect a
 - Interactive calibration to establish baseline posture reference
 - Quality validation to ensure accurate calibration
 
-## Quick Start (For End Users)
+## Quick Start
 
 **Download and run the executable**
 
@@ -210,6 +210,7 @@ This project is provided as-is for personal use.
 ## Author
 
 Joshua Gao
+
 
 
 
