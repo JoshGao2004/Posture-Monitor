@@ -67,14 +67,59 @@ A real-time posture monitoring application that uses computer vision to detect a
    
    Note: `tkinter` is included with Python and doesn't need to be installed separately.
 
+### Building a Standalone Executable
+
+To create a standalone `.exe` file that runs without installing Python or dependencies:
+
+1. **Ensure you're using the virtual environment**:
+   ```bash
+   venv\Scripts\activate
+   ```
+
+2. **Install PyInstaller** (if not already installed):
+   ```bash
+   pip install pyinstaller
+   ```
+
+3. **Build the executable**:
+   ```bash
+   pyinstaller Posture.spec
+   ```
+   
+   Or use the venv Python directly:
+   ```bash
+   .\venv\Scripts\pyinstaller.exe Posture.spec
+   ```
+
+4. **Find your executable**:
+   - The executable will be in the `dist/` folder
+   - The main executable is `dist/Posture.exe`
+   - This is a single-file executable with all dependencies bundled
+
+5. **Distribution**:
+   - Simply distribute the `Posture.exe` file
+   - Users can run it directly without installing Python or dependencies
+   - The executable is large (~200-500 MB) due to MediaPipe and OpenCV dependencies
+   - On first run, the executable extracts files to a temporary directory (this is normal)
+
+**Note**: 
+- First-time startup may be slower as the executable extracts to a temporary directory
+- Some antivirus software may flag PyInstaller executables (this is a false positive)
+- The executable includes all dependencies, preset files, and sound files - no additional installation is required
+- For GitHub releases, upload the `Posture.exe` file directly
+
 ## Usage
 
 ### Running the Application
 
-1. **Start the program**:
+**Option 1: Run from source**
    ```bash
    python Posture.py
    ```
+
+**Option 2: Run the standalone executable**
+   - Double-click `Posture.exe` (if you've built it)
+   - No Python installation required
 
 2. **Calibration** (first time):
    - Position yourself comfortably in front of the camera
@@ -104,12 +149,14 @@ A real-time posture monitoring application that uses computer vision to detect a
 Posture/
 ├── Posture.py              # Main application file
 ├── SettingsMenu.py         # Settings menu GUI module
+├── Posture.spec            # PyInstaller configuration file
 ├── Presets/                # Preset configuration files
 │   ├── metric_presets.json
 │   └── performance_presets.json
 ├── Sounds/                 # Notification sound files
 │   ├── negative.wav        # Bad posture alert sound
 │   └── positive.wav        # Good posture notification sound
+├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
 
@@ -165,10 +212,16 @@ Posture/
   - Pygame - Volume-controlled sound notifications
   - Winotify - Windows toast notifications
   - Tkinter - GUI library (included with Python, no installation needed)
+  - PyInstaller (optional) - For building standalone executables
 
 Install all dependencies with:
 ```bash
 pip install -r requirements.txt
+```
+
+For building executables, also install:
+```bash
+pip install pyinstaller
 ```
 
 ## License
