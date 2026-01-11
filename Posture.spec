@@ -1,6 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
+from PyInstaller.utils.hooks import collect_data_files
 
 block_cipher = None
+
+# Collect MediaPipe data files (binary assets)
+mediapipe_datas = collect_data_files('mediapipe')
 
 a = Analysis(
     ['Posture.py'],
@@ -9,7 +14,7 @@ a = Analysis(
     datas=[
         ('Presets', 'Presets'),
         ('Sounds', 'Sounds'),
-    ],
+    ] + mediapipe_datas,  # Add MediaPipe data files
     hiddenimports=[
         'cv2',
         'mediapipe',
@@ -18,6 +23,10 @@ a = Analysis(
         'winotify',
         'tkinter',
         'PIL._tkinter_finder',
+        'mediapipe.python',
+        'mediapipe.python.solutions',
+        'mediapipe.python.solutions.face_mesh',
+        'mediapipe.python.solutions.pose',
     ],
     hookspath=[],
     hooksconfig={},
