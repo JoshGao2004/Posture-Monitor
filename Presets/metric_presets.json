@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "default_preset": "Default",
+  "presets": {
+    "Default": {
+      "slouching": 350.0,
+      "uneven_shoulders": 150.0,
+      "head_tilt": 10.0,
+      "neck_forward": 30.0,
+      "shoulders_forward": 350.0
+    },
+    "Sensitive": {
+      "slouching": 300.0,
+      "uneven_shoulders": 100.0,
+      "head_tilt": 5.0,
+      "neck_forward": 20.0,
+      "shoulders_forward": 300.0
+    },
+    "Relaxed": {
+      "slouching": 500.0,
+      "uneven_shoulders": 200.0,
+      "head_tilt": 15.0,
+      "neck_forward": 40.0,
+      "shoulders_forward": 500.0
+    }
+  }
+}

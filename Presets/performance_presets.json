@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "default_preset": "MEDIUM",
+  "presets": {
+    "LOW": {
+      "processing_fps": 5,
+      "display_fps": 5,
+      "frame_skip_interval": 6,
+      "model_complexity": 0,
+      "history_size": 10,
+      "outlier_std_deviations": 2.5,
+      "show_visual_guides": false,
+      "face_mesh_drawing_enabled": true,
+      "face_landmark_count": 5
+    },
+    "MEDIUM": {
+      "processing_fps": 15,
+      "display_fps": 15,
+      "frame_skip_interval": 2,
+      "model_complexity": 1,
+      "history_size": 20,
+      "outlier_std_deviations": 3.0,
+      "show_visual_guides": true,
+      "face_mesh_drawing_enabled": true,
+      "face_landmark_count": 20
+    },
+    "HIGH": {
+      "processing_fps": 30,
+      "display_fps": 30,
+      "frame_skip_interval": 1,
+      "model_complexity": 2,
+      "history_size": 30,
+      "outlier_std_deviations": 3.0,
+      "show_visual_guides": true,
+      "face_mesh_drawing_enabled": true,
+      "face_landmark_count": 40
+    }
+  }
+}
