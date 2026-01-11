@@ -35,3 +35,7 @@ desktop.ini
 dist/
 build/
 *.exe
+
+# Release packages (keep script, ignore build folders)
+Posture-v*/
+Posture-*.zip
