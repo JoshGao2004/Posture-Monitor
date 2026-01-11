@@ -35,14 +35,27 @@ A real-time posture monitoring application that uses computer vision to detect a
 - Interactive calibration to establish baseline posture reference
 - Quality validation to ensure accurate calibration
 
-## Installation
+## Quick Start (For End Users)
+
+**Download and run the executable - no installation required!**
+
+1. Go to the **Releases** page on GitHub
+2. Download the latest `Posture.exe` file
+3. Double-click `Posture.exe` to run
+4. No Python installation or dependencies required - it just works!
+
+**That's it!** The executable includes everything needed to run. Just download, double-click, and go!
+
+---
+
+## Installation (For Developers)
 
 ### Prerequisites
 - Python 3.12 or higher
 - Webcam/camera
 - Windows OS (for toast notifications)
 
-### Setup
+### Setup from Source
 
 1. **Clone or download the repository**
 
@@ -67,7 +80,7 @@ A real-time posture monitoring application that uses computer vision to detect a
    
    Note: `tkinter` is included with Python and doesn't need to be installed separately.
 
-### Building a Standalone Executable
+### Building a Standalone Executable (For Developers)
 
 To create a standalone `.exe` file that runs without installing Python or dependencies:
 
@@ -97,29 +110,33 @@ To create a standalone `.exe` file that runs without installing Python or depend
    - This is a single-file executable with all dependencies bundled
 
 5. **Distribution**:
-   - Simply distribute the `Posture.exe` file
-   - Users can run it directly without installing Python or dependencies
+   - Upload `Posture.exe` to GitHub Releases for distribution
+   - Users can download and run it directly - no installation needed!
    - The executable is large (~200-500 MB) due to MediaPipe and OpenCV dependencies
    - On first run, the executable extracts files to a temporary directory (this is normal)
 
-**Note**: 
-- First-time startup may be slower as the executable extracts to a temporary directory
-- Some antivirus software may flag PyInstaller executables (this is a false positive)
-- The executable includes all dependencies, preset files, and sound files - no additional installation is required
-- For GitHub releases, upload the `Posture.exe` file directly
+**Important Notes**: 
+- ✅ The executable includes all dependencies, preset files, and sound files - no additional installation required
+- ⚠️ First-time startup may be slower as the executable extracts to a temporary directory
+- ⚠️ Some antivirus software may flag PyInstaller executables (this is a false positive)
+- 📦 For GitHub releases, upload the `Posture.exe` file directly as a release asset
 
 ## Usage
 
 ### Running the Application
 
-**Option 1: Run from source**
+**Option 1: Run the standalone executable** (Recommended for end users)
+   - Double-click `Posture.exe` (download from GitHub Releases)
+   - No Python installation required - just run and go!
+
+**Option 2: Run from source** (For developers)
    ```bash
    python Posture.py
    ```
 
-**Option 2: Run the standalone executable**
-   - Double-click `Posture.exe` (if you've built it)
-   - No Python installation required
+### Getting Started
+
+1. **Launch the application** - The video feed will start automatically
 
 2. **Calibration** (first time):
    - Position yourself comfortably in front of the camera
@@ -131,7 +148,7 @@ To create a standalone `.exe` file that runs without installing Python or depend
    - Configure metrics, performance presets, visual options, and notifications
    - Click "Save" to apply changes or "Cancel" to discard
 
-4. **Controls**:
+4. **Keyboard Controls**:
    - `C` - Calibrate (recalibrate your baseline posture)
    - `ESC` - Exit the application
 
@@ -198,12 +215,20 @@ Posture/
 - **Low FPS**: Try the LOW performance preset or reduce camera resolution
 - **Inaccurate detection**: Recalibrate when in your ideal posture position
 - **Notifications not working**: 
-  - Check that `winotify` is installed: `pip install winotify`
   - Verify notification settings are enabled in the settings menu
-- **Import errors**: Ensure all dependencies are installed in your virtual environment
+  - If running from source, check that `winotify` is installed: `pip install winotify`
+- **Executable won't run**:
+  - Some antivirus software may flag PyInstaller executables (this is a false positive)
+  - Try adding an exception for `Posture.exe` in your antivirus settings
+  - First startup may take a few seconds as files are extracted (this is normal)
+- **Import errors** (when running from source): Ensure all dependencies are installed in your virtual environment
 
 ## Requirements
 
+### For End Users (Using Executable)
+- ✅ **Nothing!** Just download and run `Posture.exe` - all dependencies are included
+
+### For Developers (Running from Source)
 - Python 3.12+
 - Dependencies listed in `requirements.txt`:
   - OpenCV (opencv-python) - Computer vision library
@@ -214,12 +239,12 @@ Posture/
   - Tkinter - GUI library (included with Python, no installation needed)
   - PyInstaller (optional) - For building standalone executables
 
-Install all dependencies with:
+**Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-For building executables, also install:
+**For building executables:**
 ```bash
 pip install pyinstaller
 ```
